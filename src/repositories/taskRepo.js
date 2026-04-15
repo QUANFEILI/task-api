@@ -10,3 +10,11 @@ export async function create(data) {
     data,
   });
 }
+
+export async function findBycompleted(completed) {
+  return prisma.task.findMany({
+    where: { 
+      completed: completed,
+     },
+  });
+}
